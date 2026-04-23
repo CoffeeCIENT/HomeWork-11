@@ -43,6 +43,6 @@ public class Main {
         System.out.println("Задание 2:");
         checkClientDevice(1, 2013);
         System.out.println("Задание 3:");
-        chekDeliveryDistance(110);
+        chekDeliveryDistance(95);
     }
 }
