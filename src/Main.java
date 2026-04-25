@@ -10,38 +10,21 @@ public class Main {
         return year;
     }
 
-//    public static void checkClientDeviceForApp(int clientOS, int clientDeviceYear) {
-//        int currentYear = LocalDate.now().getYear();
-//        if (currentYear == clientDeviceYear && clientOS == 0) {
-//            System.out.println("Установите стандартную версию приложения для iOS по ссылке.");
-//        } else if (currentYear == clientDeviceYear && clientOS == 1) {
-//            System.out.println("Установите стандартную версию приложения для Android по ссылке.");
-//        } else if (clientDeviceYear < currentYear && clientOS == 0) {
-//            System.out.println("Установите облегчённую версию приложения для iOS по ссылке.");
-//        } else if (clientDeviceYear < currentYear && clientOS == 1) {
-//            System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
-//        }
-//    }
-
     public static void checkClientDeviceForApp(int clientOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
-        if (clientOS == 0) {
-            if (clientDeviceYear == currentYear) {
-                System.out.println("Установите стандартную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите облегчённую версию приложения для iOS по ссылке.");
-            }
-        } else if (clientOS == 1) {
-            if (clientDeviceYear == currentYear) {
-                System.out.println("Установите стандартную версию приложения для Android по ссылке.");
-            } else {
-                System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
-            }
+        if (currentYear == clientDeviceYear && clientOS == 0) {
+            System.out.println("Установите стандартную версию приложения для iOS по ссылке.");
+        } else if (currentYear == clientDeviceYear && clientOS == 1) {
+            System.out.println("Установите стандартную версию приложения для Android по ссылке.");
+        } else if (clientDeviceYear < currentYear && clientOS == 0) {
+            System.out.println("Установите облегчённую версию приложения для iOS по ссылке.");
+        } else if (clientDeviceYear < currentYear && clientOS == 1) {
+            System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
         }
     }
 
     public static int checkDeliveryDistance(int deliveryDistance) {
-        if (deliveryDistance <= 20) {
+        if (deliveryDistance > 0 && deliveryDistance <= 20) {
             System.out.println("Потребуется дней: 1");
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
             System.out.println("Потребуется дней: 2");
